@@ -1,6 +1,6 @@
 # Ubuntu NVIDIA Drivers HP Pavilion 14 dh0xxx x360
 
-This repository wraps a workaround to make [Ubuntu NVIDIA drivers](https://documentation.ubuntu.com/server/how-to/graphics/install-nvidia-drivers/) work in HP Pavilion 14 dh0xxx x360 laptops. As mentioned, it's just a temporary workaround which may affect touchpad and touchscreen performances. Therefore, the provided script grants access to the NVIDIA graphics card, which can be used for specific tasks, and then safely roll back to the original non-driver system configuration. Better solutions and improvement ideas are wellcome.
+This repository wraps a workaround to make [Ubuntu NVIDIA drivers](https://documentation.ubuntu.com/server/how-to/graphics/install-nvidia-drivers/) work in HP Pavilion 14 dh0xxx x360 laptops. As mentioned, it's just a temporary workaround which may affect touchpad and touchscreen performances (this is completely reversible by returning to the original configuration). Therefore, the provided script grants access to the NVIDIA graphics card, which can be used for specific tasks, and then safely roll back to the original non-driver system configuration. Better solutions and improvement ideas are wellcome.
 
 It's basically a small, safe bash utility to add `acpi_osi=!` and `acpi_osi="Windows 2009"` to the `GRUB_CMDLINE_LINUX_DEFAULT` line in `/etc/default/grub` — with automatic backups and easy restore options.
 
@@ -22,6 +22,7 @@ It's basically a small, safe bash utility to add `acpi_osi=!` and `acpi_osi="Win
 
 * `sudo` or root privileges to modify `/etc/default/grub` and run `update-grub`.
 * `python3` — usually available on modern Debian/Ubuntu systems.
+* [Ubuntu NVIDIA drivers](https://documentation.ubuntu.com/server/how-to/graphics/install-nvidia-drivers/) installed.
 
 ---
 
